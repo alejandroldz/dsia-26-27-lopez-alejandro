@@ -45,10 +45,10 @@ if __name__ == "__main__":
     
     validos.to_csv("Datos/ventas_limpias.csv", index=False)
     datos = {
-    "filas_totales": int(len(df)),
-    "filas_validas": int(len(validos)),
-    "filas_invalidas": int(len(errores)),
-    "importe_total": float(validos["importe"].sum()),
+        "filas_totales": int(len(df)),
+        "filas_validas": int(len(validos)),
+        "filas_invalidas": int(len(errores)),
+        "importe_total": float(validos["importe"].sum()),
     }
     json_path = DATA_DIR / "calidad_datos.json"
     json_path.write_text(json.dumps(datos, indent=2, ensure_ascii=False), encoding="utf-8")
