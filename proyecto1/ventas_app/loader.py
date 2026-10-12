@@ -10,6 +10,7 @@ def load(path: Path) -> pd.DataFrame:
 
     try:
         df = pd.read_csv(path)
+        return df
     except Exception as e:
         raise DataLoadError(f"Error al leer el archivo: {path}") from e
         
